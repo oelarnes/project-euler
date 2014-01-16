@@ -21,6 +21,10 @@
 # 05886116467109405077541002256983155200055935729725
 # 71636269561882670428252483600823257530420752963450
 
+# Solution: Check each product of five consecutive digits
+
+from operator import mul
+
 s = '73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
 85861560789112949495459501737958331952853208805511\
@@ -43,10 +47,21 @@ s = '73167176531330624919225119674426574742355349194934\
 71636269561882670428252483600823257530420752963450'
 
 l = [int(el) for el in s]
-prod = l[0]*l[1]*l[2]*l[3]*l[4]
-best = prod
+l_short = l[0:5]
+best = reduce(mul, l_short)
+j_best = 0
+l_best = l_short
+
 for j in range (len(s) - 5):
-	prod = prod * l[j+5]/l[j]
+	l_short.pop(0)
+	l_short.append(l[j+5])
+	prod = reduce(mul, l_short)
 	if prod > best:
 		best = prod
+		j_best = j
+		l_best = l_short[:]
+		
 print best
+#print j_best, l_best
+
+#40824
