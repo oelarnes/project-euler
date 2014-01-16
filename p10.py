@@ -7,3 +7,5 @@
 from pe_functions import get_primes
 
 print sum(get_primes(1999999))
+
+# 142913828922

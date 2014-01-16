@@ -15,3 +15,5 @@ if triples == []:
 	print "No triples found"
 else:
 	print reduce(mul, triples[0])
+	
+# 31875000

@@ -98,4 +98,7 @@ for j in range(17):
 			c_best = [j,k]
 			best = prod
 			
-print best, t_best, l_best, c_best
+print best
+#print t_best, l_best, c_best
+
+#70600674 down and to the left [89, 94, 97, 87] [12, 6]

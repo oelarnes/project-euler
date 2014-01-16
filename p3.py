@@ -50,9 +50,9 @@ def factor(n):
 	
 	return factors
 	
-print factor(N)
+print factor(N)[-1]
 
-#[71, 839, 1471, 6857] for N = 600851475143
+# 6857
 
 	
 	
