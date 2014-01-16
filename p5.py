@@ -8,7 +8,7 @@
 # of the prime factorizations, with multiplicity. We will do this by defining a two-part
 # union function for sorted lists.
 
-from primes import factor
+from pe_functions import factor
 from operator import mul
 
 def pair_union(l1, l2):

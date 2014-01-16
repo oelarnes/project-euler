@@ -23,7 +23,7 @@ def factor(n):
 
 	factors = [n]
 	pop = True
-	while (not pop and p<= numpy.sqrt(n)) or (primes != [] and primes[-1]<= numpy.sqrt(n)):
+	while (not pop and p<= numpy.sqrt(n)) or (primes != [] and primes[0]<= numpy.sqrt(n)):
 		if pop:
 			p = primes.pop(0)
 		if not n%p:
