@@ -1,4 +1,4 @@
-This folder contains solutions to problems from projecteuler.net. The ffffffffff
+This folder contains solutions to problems from projecteuler.net. The fffffffffff
 problems are copied from the project euler website and pasted at the top 
 of each page, except for a few cases where formatting made this difficult. 
 Running each program should output the correct answer to the problem as 
