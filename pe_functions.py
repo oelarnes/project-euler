@@ -37,3 +37,23 @@ def factor(n):
 		else:
 			pop = True
 	return factors
+
+def memoize(fn):
+	cache = {}
+	def newfn(*args):
+		if args in cache:
+			return cache[args]
+		else:
+			val = fn(*args)
+			cache[args] = val
+			return val
+	return newfn
+
+@memoize
+def n_choose_r(n ,r):
+	if n == r or r == 0:
+		return 1
+	else:
+		return n_choose_r(n-1, r) + n_choose_r(n-1, r-1)
+
+

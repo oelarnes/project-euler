@@ -9,7 +9,7 @@
 # sum(n_u) has j + 2 digits, and its two digits represent possible overlap with sum(n_l).
 
 # Thus we need give at least one digit buffer between 10 and j + 2 - 2,
-# and check that that digit is not a '9' If it is, increase the buffer size
+# and to check that that digit is not a '9'. If it is, increase the buffer size
 # by incrementing j until we find a non-9 digit. Start with j = 11.
 
 ns = '37107287533902102798797998220837590246510135740250 \
@@ -118,8 +118,8 @@ j = 10
 
 while not done:
 	j += 1
-	n_u = [int(word[0:j]) for word in ns.split()]
-	s = str(sum(n_u))
+	n_us = [int(word[0:j]) for word in ns.split()]
+	s = str(sum(n_us))
 	if any([d != '9' for d in s[10:j]]):
 		done = True
 
