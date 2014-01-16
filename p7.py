@@ -6,12 +6,11 @@
 # We use our get_primes function. Since the sieve seems to be the best way to
 # get primes and it requires storing all the primes, I don't see an advantage to
 # looking for a more dynamic solution. We use a table of the pi function to estimate how 
-# large a seive is needed. It looks like 200,000 should be sufficient. After running it 
-# once, we reduced the estimate to only what is needed.
+# large a seive is needed. It looks like 150,000 should be sufficient.
 
-from prime_fact import get_primes
+from pe_functions import get_primes
 
-primes = get_primes(105000)
+primes = get_primes(150000)
 
 print primes[10000]
 

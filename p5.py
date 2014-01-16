@@ -27,7 +27,7 @@ def pair_union(l1, l2):
 			l1.append(e1)
 	return l1 + l2 + l
 				
-l = reduce(pair_union, [factor(j) for j in range(1,30)])
+l = reduce(pair_union, [factor(j) for j in range(1,21)])
 print l
 print reduce(mul, l, 1)
 

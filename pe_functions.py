@@ -1,3 +1,5 @@
+import numpy
+
 def get_primes(n):
 	if n < 2:
 		return []
