@@ -22,7 +22,8 @@ def get_primes(n):
 
 def factor(n):
 	primes = get_primes(int(numpy.sqrt(n)))
-
+	if n == 1:
+		return []
 	factors = [n]
 	pop = True
 	while (not pop and p<= numpy.sqrt(n)) or (primes != [] and primes[0]<= numpy.sqrt(n)):

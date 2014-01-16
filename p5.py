@@ -12,7 +12,7 @@ from pe_functions import factor
 from operator import mul
 
 def pair_union(l1, l2):
-#assumes sorted lists!!
+# !!assumes sorted lists!!
 	l = []
 	while l1 != [] and l2 != []:
 		e1 = l1.pop()
@@ -28,7 +28,7 @@ def pair_union(l1, l2):
 	return l1 + l2 + l
 				
 l = reduce(pair_union, [factor(j) for j in range(1,21)])
-print l
+# print l
 print reduce(mul, l, 1)
 
 # Another solution: for each prime less than 20, list the highest power of that prime less 
