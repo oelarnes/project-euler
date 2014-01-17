@@ -21,8 +21,8 @@ m_length = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 for year in range(100):
 	for month in range(12):
-		#month == 0 sets day to the first of month 1, so count should be updated before
-		#the change
+		#loop determines the first day of the next month, so count should be updated 
+		#before the day changes
 		if day == 0:
 			count += 1
 		if year%4 == 3 and month == 1:
@@ -33,3 +33,5 @@ for year in range(100):
 			day = day % 7
 			
 print count
+
+# 171
