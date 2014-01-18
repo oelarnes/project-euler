@@ -60,3 +60,28 @@ def factorial(n):
 	if n == 0:
 		return 1
 	return n*factorial(n-1)
+	
+def merge_sort(l, greater):
+	n = len(l)
+	if n in [0, 1]:
+		return l
+	l1 = merge_sort(l[:n/2], greater)
+	l2 = merge_sort(l[n/2:], greater)
+	ls = []
+	e1 = l1.pop(0)
+	e2 = l2.pop(0)
+	while True:
+		if greater(e1, e2):
+			ls.append(e2)
+			if l2 == []:
+				return ls + [e1] + l1
+			e2 = l2.pop(0)
+		else:
+			ls.append(e1)
+			if l1 == []:
+				return ls + [e2] + l2
+			e1 = l1.pop(0)
+			
+		
+		
+	
