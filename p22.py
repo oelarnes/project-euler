@@ -4,6 +4,9 @@
 # 
 # What is the total of all the name scores in the file?
 
+# Solution: We implement merge_sort to sort the names, passing in the list of names
+# and a comparison function, returning the sorted list. Calculating the values is straightforward after that.
+
 import string
 from pe_functions import merge_sort
 
@@ -24,14 +27,16 @@ def greater(name1, name2):
 			return True
 		if key[name2[j]] > key[name1[j]]:
 			return False
-	return True
-	
+	return False
+
 f = open("names.txt", 'r')
+
 names = f.read()
 
 name_list = [string.strip(name, '"') for name in names.split(',')]
 
 name_list = merge_sort(name_list, greater)
+
 
 total = 0
 n = 1

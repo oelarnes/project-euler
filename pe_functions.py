@@ -1,4 +1,5 @@
 import numpy
+from operator import mul
 
 def get_primes(n):
 	if n < 2:
@@ -82,6 +83,29 @@ def merge_sort(l, greater):
 				return ls + [e2] + l2
 			e1 = l1.pop(0)
 			
+def key_increment(key, max):
+	n = len(max)
+	for j in range(n):
+		if key[j] < max[j]:
+			key[j] += 1
+			return None
+		else:
+			key[j] = 0
+			
+def proper_divs(n):
+	facts = factor(n)
+	s = {}
+	for el in facts:
+		if el not in s:
+			s[el] = 1
+		else:
+			s[el] += 1
+	divs = []
+	mults = [s[el] for el in s]
+	primes = [el for el in s]
+	key = [0]*len(mults)
+	while key != mults:
+		divs.append(reduce(mul, [primes[j]**key[j] for j in range(len(mults))], 1))
+		key_increment(key, mults)
+	return divs
 		
-		
-	
