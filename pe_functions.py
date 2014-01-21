@@ -1,6 +1,19 @@
 import numpy
 from operator import mul
 
+
+def memoize(fn):
+	cache = {}
+	def newfn(*args):
+		if args in cache:
+			return cache[args]
+		else:
+			val = fn(*args)
+			cache[args] = val
+			return val
+	return newfn
+	
+@memoize
 def get_primes(n):
 	if n < 2:
 		return []
@@ -38,17 +51,6 @@ def factor(n):
 		else:
 			pop = True
 	return factors
-
-def memoize(fn):
-	cache = {}
-	def newfn(*args):
-		if args in cache:
-			return cache[args]
-		else:
-			val = fn(*args)
-			cache[args] = val
-			return val
-	return newfn
 
 @memoize
 def n_choose_r(n ,r):

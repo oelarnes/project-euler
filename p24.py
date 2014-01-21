@@ -31,3 +31,4 @@ for i in range(999999):
 	next_perm(perm)
 
 print reduce(add,[str(j) for j in perm])
+# 2783915460
