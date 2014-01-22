@@ -12,8 +12,7 @@ def memoize(fn):
 			cache[args] = val
 			return val
 	return newfn
-	
-@memoize
+
 def get_primes(n):
 	if n < 2:
 		return []

@@ -6,7 +6,6 @@
 # 
 # Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 
-# SLOW
 
 N = 28123
 
@@ -18,9 +17,12 @@ def is_abundant(n):
 	return False
 	
 abundants = []
+
 for j in range(1,N+1):
 	if is_abundant(j):
 		abundants.append(j)
+
+set_abundants = set(abundants)
 
 sum = 0
 
@@ -31,7 +33,7 @@ for n in range(N,0,-1):
 		if abundants[j] > n/2:
 			done = True
 			sum += n
-		elif n - abundants[j] in abundants:
+		elif n - abundants[j] in set_abundants:
 			done = True
 		else:
 			j = j+1
